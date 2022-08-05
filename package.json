@@ -4,23 +4,33 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "watch": "nodemon",
-    "seed": "node seeders/seeds.js"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^4.0.1",
-    "faker": "^4.1.0",
-    "jsonwebtoken": "^8.5.1",
     "apollo-server-express": "^3.6.1",
+    "bcrypt": "^4.0.1",
     "express": "^4.17.2",
+    "faker": "^4.1.0",
     "graphql": "^16.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.6"
   },
   "devDependencies": {
+    "concurrently": "^7.3.0",
     "nodemon": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkagei/deep-thoughts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hkagei/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/hkagei/deep-thoughts#readme"
 }
